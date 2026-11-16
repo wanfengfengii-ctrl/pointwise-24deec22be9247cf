@@ -1,0 +1,4480 @@
+{
+  "cases": [
+    {
+      "actual": {
+        "device": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 0,
+            "tid": 65534,
+            "value": 7
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 1,
+            "tid": 65535,
+            "value": 70
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 2,
+            "tid": 0,
+            "value": 8
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 3,
+            "tid": 1,
+            "value": 80
+          }
+        ],
+        "name": "normal_out_of_order",
+        "publications": [
+          {
+            "errors": [],
+            "round": "b",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 8,
+              "1": 80
+            }
+          },
+          {
+            "errors": [],
+            "round": "a",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 7,
+              "1": 70
+            }
+          }
+        ],
+        "rounds": [
+          {
+            "errors": [],
+            "round": "a",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 7,
+              "1": 70
+            }
+          },
+          {
+            "errors": [],
+            "round": "b",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 8,
+              "1": 80
+            }
+          }
+        ],
+        "submitted": {
+          "a": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 0,
+              "tid": 65534,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 1,
+              "tid": 65535,
+              "token": 1
+            }
+          ],
+          "b": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 2,
+              "tid": 0,
+              "token": 2
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 3,
+              "tid": 1,
+              "token": 3
+            }
+          ]
+        },
+        "trace": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 0,
+            "side": "device",
+            "tid": 65534,
+            "value": 7
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 65534,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 1,
+            "side": "device",
+            "tid": 65535,
+            "value": 70
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 65535,
+            "token": 1
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 2,
+            "side": "device",
+            "tid": 0,
+            "value": 8
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 0,
+            "token": 2
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 3,
+            "side": "device",
+            "tid": 1,
+            "value": 80
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 1,
+            "token": 3
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 3,
+            "side": "device",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 1,
+            "token": 3,
+            "value": 80
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 1,
+            "side": "device",
+            "tid": 65535
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 65535
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 65535,
+            "token": 1,
+            "value": 70
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 2,
+            "side": "device",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 0,
+            "token": 2,
+            "value": 8
+          },
+          {
+            "at": 0,
+            "errors": [],
+            "kind": "sealed",
+            "round": "b",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 8,
+              "1": 80
+            }
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 0,
+            "side": "device",
+            "tid": 65534
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 65534
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 65534,
+            "token": 0,
+            "value": 7
+          },
+          {
+            "at": 0,
+            "errors": [],
+            "kind": "sealed",
+            "round": "a",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 7,
+              "1": 70
+            }
+          }
+        ]
+      },
+      "differences": {
+        "a": false,
+        "b": false
+      },
+      "expected": [
+        {
+          "origins": {
+            "0": 0,
+            "1": 1
+          },
+          "round": "a",
+          "status": "success",
+          "values": {
+            "0": 7,
+            "1": 70
+          }
+        },
+        {
+          "origins": {
+            "0": 2,
+            "1": 3
+          },
+          "round": "b",
+          "status": "success",
+          "values": {
+            "0": 8,
+            "1": 80
+          }
+        }
+      ],
+      "name": "normal_out_of_order"
+    },
+    {
+      "actual": {
+        "device": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 0,
+            "tid": 7,
+            "value": 11
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 1,
+            "tid": 8,
+            "value": 110
+          },
+          {
+            "address": 0,
+            "at": 6,
+            "connection": 0,
+            "released": true,
+            "seq": 2,
+            "tid": 7,
+            "value": 22
+          },
+          {
+            "address": 1,
+            "at": 6,
+            "connection": 0,
+            "released": true,
+            "seq": 3,
+            "tid": 8,
+            "value": 220
+          }
+        ],
+        "name": "late_reuse",
+        "publications": [
+          {
+            "errors": [],
+            "round": "new",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 11,
+              "1": 220
+            }
+          }
+        ],
+        "rounds": [
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              }
+            ],
+            "round": "old",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 110
+            }
+          },
+          {
+            "errors": [],
+            "round": "new",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 11,
+              "1": 220
+            }
+          }
+        ],
+        "submitted": {
+          "new": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 2,
+              "tid": 7,
+              "token": 2
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 3,
+              "tid": 8,
+              "token": 3
+            }
+          ],
+          "old": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 0,
+              "tid": 7,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 1,
+              "tid": 8,
+              "token": 1
+            }
+          ]
+        },
+        "trace": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 0,
+            "side": "device",
+            "tid": 7,
+            "value": 11
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 7,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 1,
+            "side": "device",
+            "tid": 8,
+            "value": 110
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 8,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 1,
+            "side": "device",
+            "tid": 8
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 8
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 8,
+            "token": 1,
+            "value": 110
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "timeout",
+            "side": "client",
+            "tid": 7,
+            "token": 0
+          },
+          {
+            "at": 6,
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              }
+            ],
+            "kind": "sealed",
+            "round": "old",
+            "side": "sampler",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 110
+            }
+          },
+          {
+            "address": 0,
+            "at": 6,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 2,
+            "side": "device",
+            "tid": 7,
+            "value": 22
+          },
+          {
+            "address": 0,
+            "at": 6,
+            "connection": 0,
+            "deadline": 11,
+            "kind": "sent",
+            "side": "client",
+            "tid": 7,
+            "token": 2
+          },
+          {
+            "address": 1,
+            "at": 6,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 3,
+            "side": "device",
+            "tid": 8,
+            "value": 220
+          },
+          {
+            "address": 1,
+            "at": 6,
+            "connection": 0,
+            "deadline": 11,
+            "kind": "sent",
+            "side": "client",
+            "tid": 8,
+            "token": 3
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 0,
+            "side": "device",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 7,
+            "token": 2,
+            "value": 11
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 3,
+            "side": "device",
+            "tid": 8
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 8
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 8,
+            "token": 3,
+            "value": 220
+          },
+          {
+            "at": 6,
+            "errors": [],
+            "kind": "sealed",
+            "round": "new",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 11,
+              "1": 220
+            }
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 2,
+            "side": "device",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "unclaimed",
+            "side": "client",
+            "tid": 7
+          }
+        ]
+      },
+      "differences": {
+        "new": true,
+        "old": false
+      },
+      "expected": [
+        {
+          "origins": {
+            "1": 1
+          },
+          "round": "old",
+          "status": "failed",
+          "values": {
+            "1": 110
+          }
+        },
+        {
+          "origins": {
+            "0": 2,
+            "1": 3
+          },
+          "round": "new",
+          "status": "success",
+          "values": {
+            "0": 22,
+            "1": 220
+          }
+        }
+      ],
+      "name": "late_reuse"
+    },
+    {
+      "actual": {
+        "device": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 0,
+            "tid": 7,
+            "value": 11
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 1,
+            "tid": 8,
+            "value": 110
+          },
+          {
+            "address": 0,
+            "at": 6,
+            "connection": 0,
+            "released": true,
+            "seq": 2,
+            "tid": 9,
+            "value": 22
+          },
+          {
+            "address": 1,
+            "at": 6,
+            "connection": 0,
+            "released": true,
+            "seq": 3,
+            "tid": 10,
+            "value": 220
+          }
+        ],
+        "name": "late_no_reuse",
+        "publications": [
+          {
+            "errors": [],
+            "round": "new",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 22,
+              "1": 220
+            }
+          }
+        ],
+        "rounds": [
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              }
+            ],
+            "round": "old",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 110
+            }
+          },
+          {
+            "errors": [],
+            "round": "new",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 22,
+              "1": 220
+            }
+          }
+        ],
+        "submitted": {
+          "new": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 2,
+              "tid": 9,
+              "token": 2
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 3,
+              "tid": 10,
+              "token": 3
+            }
+          ],
+          "old": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 0,
+              "tid": 7,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 1,
+              "tid": 8,
+              "token": 1
+            }
+          ]
+        },
+        "trace": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 0,
+            "side": "device",
+            "tid": 7,
+            "value": 11
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 7,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 1,
+            "side": "device",
+            "tid": 8,
+            "value": 110
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 8,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 1,
+            "side": "device",
+            "tid": 8
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 8
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 8,
+            "token": 1,
+            "value": 110
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "timeout",
+            "side": "client",
+            "tid": 7,
+            "token": 0
+          },
+          {
+            "at": 6,
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              }
+            ],
+            "kind": "sealed",
+            "round": "old",
+            "side": "sampler",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 110
+            }
+          },
+          {
+            "address": 0,
+            "at": 6,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 2,
+            "side": "device",
+            "tid": 9,
+            "value": 22
+          },
+          {
+            "address": 0,
+            "at": 6,
+            "connection": 0,
+            "deadline": 11,
+            "kind": "sent",
+            "side": "client",
+            "tid": 9,
+            "token": 2
+          },
+          {
+            "address": 1,
+            "at": 6,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 3,
+            "side": "device",
+            "tid": 10,
+            "value": 220
+          },
+          {
+            "address": 1,
+            "at": 6,
+            "connection": 0,
+            "deadline": 11,
+            "kind": "sent",
+            "side": "client",
+            "tid": 10,
+            "token": 3
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 0,
+            "side": "device",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "unclaimed",
+            "side": "client",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 3,
+            "side": "device",
+            "tid": 10
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 10
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 10,
+            "token": 3,
+            "value": 220
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 2,
+            "side": "device",
+            "tid": 9
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 9
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 9,
+            "token": 2,
+            "value": 22
+          },
+          {
+            "at": 6,
+            "errors": [],
+            "kind": "sealed",
+            "round": "new",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 22,
+              "1": 220
+            }
+          }
+        ]
+      },
+      "differences": {
+        "new": false,
+        "old": false
+      },
+      "expected": [
+        {
+          "origins": {
+            "1": 1
+          },
+          "round": "old",
+          "status": "failed",
+          "values": {
+            "1": 110
+          }
+        },
+        {
+          "origins": {
+            "0": 2,
+            "1": 3
+          },
+          "round": "new",
+          "status": "success",
+          "values": {
+            "0": 22,
+            "1": 220
+          }
+        }
+      ],
+      "name": "late_no_reuse"
+    },
+    {
+      "actual": {
+        "device": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": false,
+            "seq": 0,
+            "tid": 0,
+            "value": 10
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": false,
+            "seq": 1,
+            "tid": 1,
+            "value": 100
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 1,
+            "released": true,
+            "seq": 2,
+            "tid": 0,
+            "value": 20
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 1,
+            "released": true,
+            "seq": 3,
+            "tid": 1,
+            "value": 200
+          }
+        ],
+        "name": "retire_pending_round",
+        "publications": [
+          {
+            "errors": [],
+            "round": "fresh",
+            "sources": {
+              "0": {
+                "connection": 1,
+                "token": 0
+              },
+              "1": {
+                "connection": 1,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 20,
+              "1": 200
+            }
+          }
+        ],
+        "rounds": [
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "ConnectionError"
+              },
+              {
+                "address": 1,
+                "error": "ConnectionError"
+              }
+            ],
+            "round": "cut",
+            "sources": {},
+            "status": "failed",
+            "values": {}
+          },
+          {
+            "errors": [],
+            "round": "fresh",
+            "sources": {
+              "0": {
+                "connection": 1,
+                "token": 0
+              },
+              "1": {
+                "connection": 1,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 20,
+              "1": 200
+            }
+          }
+        ],
+        "submitted": {
+          "cut": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 0,
+              "tid": 0,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 1,
+              "tid": 1,
+              "token": 1
+            }
+          ],
+          "fresh": [
+            {
+              "address": 0,
+              "connection": 1,
+              "seq": 2,
+              "tid": 0,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 1,
+              "seq": 3,
+              "tid": 1,
+              "token": 1
+            }
+          ]
+        },
+        "trace": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 0,
+            "side": "device",
+            "tid": 0,
+            "value": 10
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 0,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 1,
+            "side": "device",
+            "tid": 1,
+            "value": 100
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 1,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "errors": [
+              {
+                "address": 0,
+                "error": "ConnectionError"
+              },
+              {
+                "address": 1,
+                "error": "ConnectionError"
+              }
+            ],
+            "kind": "sealed",
+            "round": "cut",
+            "side": "sampler",
+            "sources": {},
+            "status": "failed",
+            "values": {}
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 1,
+            "kind": "processed",
+            "released": false,
+            "seq": 2,
+            "side": "device",
+            "tid": 0,
+            "value": 20
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 1,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 0,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 1,
+            "kind": "processed",
+            "released": false,
+            "seq": 3,
+            "side": "device",
+            "tid": 1,
+            "value": 200
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 1,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 1,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 3,
+            "side": "device",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "kind": "answer",
+            "side": "client",
+            "tid": 1,
+            "token": 1,
+            "value": 200
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 2,
+            "side": "device",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "kind": "answer",
+            "side": "client",
+            "tid": 0,
+            "token": 0,
+            "value": 20
+          },
+          {
+            "at": 0,
+            "errors": [],
+            "kind": "sealed",
+            "round": "fresh",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 1,
+                "token": 0
+              },
+              "1": {
+                "connection": 1,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 20,
+              "1": 200
+            }
+          }
+        ]
+      },
+      "differences": {
+        "cut": false,
+        "fresh": false
+      },
+      "expected": [
+        {
+          "origins": {},
+          "round": "cut",
+          "status": "failed",
+          "values": {}
+        },
+        {
+          "origins": {
+            "0": 2,
+            "1": 3
+          },
+          "round": "fresh",
+          "status": "success",
+          "values": {
+            "0": 20,
+            "1": 200
+          }
+        }
+      ],
+      "name": "retire_pending_round"
+    },
+    {
+      "actual": {
+        "device": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 0,
+            "tid": 0,
+            "value": 10
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 1,
+            "tid": 1,
+            "value": 100
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": false,
+            "seq": 2,
+            "tid": 2,
+            "value": 20
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": false,
+            "seq": 3,
+            "tid": 3,
+            "value": 200
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 1,
+            "released": true,
+            "seq": 4,
+            "tid": 0,
+            "value": 20
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 1,
+            "released": true,
+            "seq": 5,
+            "tid": 1,
+            "value": 200
+          }
+        ],
+        "name": "retire_after_success",
+        "publications": [
+          {
+            "errors": [],
+            "round": "base",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "ConnectionError"
+              },
+              {
+                "address": 1,
+                "error": "ConnectionError"
+              }
+            ],
+            "round": "cut",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "errors": [],
+            "round": "fresh",
+            "sources": {
+              "0": {
+                "connection": 1,
+                "token": 0
+              },
+              "1": {
+                "connection": 1,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 20,
+              "1": 200
+            }
+          }
+        ],
+        "rounds": [
+          {
+            "errors": [],
+            "round": "base",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "ConnectionError"
+              },
+              {
+                "address": 1,
+                "error": "ConnectionError"
+              }
+            ],
+            "round": "cut",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "errors": [],
+            "round": "fresh",
+            "sources": {
+              "0": {
+                "connection": 1,
+                "token": 0
+              },
+              "1": {
+                "connection": 1,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 20,
+              "1": 200
+            }
+          }
+        ],
+        "submitted": {
+          "base": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 0,
+              "tid": 0,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 1,
+              "tid": 1,
+              "token": 1
+            }
+          ],
+          "cut": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 2,
+              "tid": 2,
+              "token": 2
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 3,
+              "tid": 3,
+              "token": 3
+            }
+          ],
+          "fresh": [
+            {
+              "address": 0,
+              "connection": 1,
+              "seq": 4,
+              "tid": 0,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 1,
+              "seq": 5,
+              "tid": 1,
+              "token": 1
+            }
+          ]
+        },
+        "trace": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 0,
+            "side": "device",
+            "tid": 0,
+            "value": 10
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 0,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 1,
+            "side": "device",
+            "tid": 1,
+            "value": 100
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 1,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 0,
+            "side": "device",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 0,
+            "token": 0,
+            "value": 10
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 1,
+            "side": "device",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 1,
+            "token": 1,
+            "value": 100
+          },
+          {
+            "at": 0,
+            "errors": [],
+            "kind": "sealed",
+            "round": "base",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 2,
+            "side": "device",
+            "tid": 2,
+            "value": 20
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 2,
+            "token": 2
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 3,
+            "side": "device",
+            "tid": 3,
+            "value": 200
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 3,
+            "token": 3
+          },
+          {
+            "at": 0,
+            "errors": [
+              {
+                "address": 0,
+                "error": "ConnectionError"
+              },
+              {
+                "address": 1,
+                "error": "ConnectionError"
+              }
+            ],
+            "kind": "sealed",
+            "round": "cut",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 1,
+            "kind": "processed",
+            "released": false,
+            "seq": 4,
+            "side": "device",
+            "tid": 0,
+            "value": 20
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 1,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 0,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 1,
+            "kind": "processed",
+            "released": false,
+            "seq": 5,
+            "side": "device",
+            "tid": 1,
+            "value": 200
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 1,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 1,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 5,
+            "side": "device",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "kind": "answer",
+            "side": "client",
+            "tid": 1,
+            "token": 1,
+            "value": 200
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 4,
+            "side": "device",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 1,
+            "kind": "answer",
+            "side": "client",
+            "tid": 0,
+            "token": 0,
+            "value": 20
+          },
+          {
+            "at": 0,
+            "errors": [],
+            "kind": "sealed",
+            "round": "fresh",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 1,
+                "token": 0
+              },
+              "1": {
+                "connection": 1,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 20,
+              "1": 200
+            }
+          }
+        ]
+      },
+      "differences": {
+        "base": false,
+        "cut": true,
+        "fresh": false
+      },
+      "expected": [
+        {
+          "origins": {
+            "0": 0,
+            "1": 1
+          },
+          "round": "base",
+          "status": "success",
+          "values": {
+            "0": 10,
+            "1": 100
+          }
+        },
+        {
+          "origins": {},
+          "round": "cut",
+          "status": "failed",
+          "values": {}
+        },
+        {
+          "origins": {
+            "0": 4,
+            "1": 5
+          },
+          "round": "fresh",
+          "status": "success",
+          "values": {
+            "0": 20,
+            "1": 200
+          }
+        }
+      ],
+      "name": "retire_after_success"
+    },
+    {
+      "actual": {
+        "device": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 0,
+            "tid": 0,
+            "value": 3
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 1,
+            "tid": 1,
+            "value": 30
+          }
+        ],
+        "name": "cold_failure",
+        "publications": [],
+        "rounds": [
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "ValueError"
+              }
+            ],
+            "round": "cold",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 30
+            }
+          }
+        ],
+        "submitted": {
+          "cold": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 0,
+              "tid": 0,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 1,
+              "tid": 1,
+              "token": 1
+            }
+          ]
+        },
+        "trace": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 0,
+            "side": "device",
+            "tid": 0,
+            "value": 3
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 0,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 1,
+            "side": "device",
+            "tid": 1,
+            "value": 30
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 1,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": 2,
+            "kind": "released",
+            "seq": 0,
+            "side": "device",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "error": "device exception 2",
+            "kind": "read_error",
+            "side": "client",
+            "tid": 0,
+            "token": 0
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 1,
+            "side": "device",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 1,
+            "token": 1,
+            "value": 30
+          },
+          {
+            "at": 0,
+            "errors": [
+              {
+                "address": 0,
+                "error": "ValueError"
+              }
+            ],
+            "kind": "sealed",
+            "round": "cold",
+            "side": "sampler",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 30
+            }
+          }
+        ]
+      },
+      "differences": {
+        "cold": false
+      },
+      "expected": [
+        {
+          "origins": {
+            "1": 1
+          },
+          "round": "cold",
+          "status": "failed",
+          "values": {
+            "1": 30
+          }
+        }
+      ],
+      "name": "cold_failure"
+    },
+    {
+      "actual": {
+        "device": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 0,
+            "tid": 0,
+            "value": 10
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 1,
+            "tid": 1,
+            "value": 100
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 2,
+            "tid": 2,
+            "value": 20
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 3,
+            "tid": 3,
+            "value": 200
+          }
+        ],
+        "name": "partial_failure_cache",
+        "publications": [
+          {
+            "errors": [],
+            "round": "base",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "ValueError"
+              }
+            ],
+            "round": "loss",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 200
+            }
+          }
+        ],
+        "rounds": [
+          {
+            "errors": [],
+            "round": "base",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "ValueError"
+              }
+            ],
+            "round": "loss",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 200
+            }
+          }
+        ],
+        "submitted": {
+          "base": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 0,
+              "tid": 0,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 1,
+              "tid": 1,
+              "token": 1
+            }
+          ],
+          "loss": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 2,
+              "tid": 2,
+              "token": 2
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 3,
+              "tid": 3,
+              "token": 3
+            }
+          ]
+        },
+        "trace": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 0,
+            "side": "device",
+            "tid": 0,
+            "value": 10
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 0,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 1,
+            "side": "device",
+            "tid": 1,
+            "value": 100
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 1,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 0,
+            "side": "device",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 0,
+            "token": 0,
+            "value": 10
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 1,
+            "side": "device",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 1,
+            "token": 1,
+            "value": 100
+          },
+          {
+            "at": 0,
+            "errors": [],
+            "kind": "sealed",
+            "round": "base",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 2,
+            "side": "device",
+            "tid": 2,
+            "value": 20
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 2,
+            "token": 2
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 3,
+            "side": "device",
+            "tid": 3,
+            "value": 200
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 3,
+            "token": 3
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": 2,
+            "kind": "released",
+            "seq": 2,
+            "side": "device",
+            "tid": 2
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 2
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "error": "device exception 2",
+            "kind": "read_error",
+            "side": "client",
+            "tid": 2,
+            "token": 2
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 3,
+            "side": "device",
+            "tid": 3
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 3
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 3,
+            "token": 3,
+            "value": 200
+          },
+          {
+            "at": 0,
+            "errors": [
+              {
+                "address": 0,
+                "error": "ValueError"
+              }
+            ],
+            "kind": "sealed",
+            "round": "loss",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 200
+            }
+          }
+        ]
+      },
+      "differences": {
+        "base": false,
+        "loss": true
+      },
+      "expected": [
+        {
+          "origins": {
+            "0": 0,
+            "1": 1
+          },
+          "round": "base",
+          "status": "success",
+          "values": {
+            "0": 10,
+            "1": 100
+          }
+        },
+        {
+          "origins": {
+            "1": 3
+          },
+          "round": "loss",
+          "status": "failed",
+          "values": {
+            "1": 200
+          }
+        }
+      ],
+      "name": "partial_failure_cache"
+    },
+    {
+      "actual": {
+        "device": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 0,
+            "tid": 0,
+            "value": 10
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 1,
+            "tid": 1,
+            "value": 100
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 2,
+            "tid": 2,
+            "value": 20
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 3,
+            "tid": 3,
+            "value": 200
+          }
+        ],
+        "name": "total_failure_cache",
+        "publications": [
+          {
+            "errors": [],
+            "round": "base",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              },
+              {
+                "address": 1,
+                "error": "TimeoutError"
+              }
+            ],
+            "round": "gone",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          }
+        ],
+        "rounds": [
+          {
+            "errors": [],
+            "round": "base",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              },
+              {
+                "address": 1,
+                "error": "TimeoutError"
+              }
+            ],
+            "round": "gone",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          }
+        ],
+        "submitted": {
+          "base": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 0,
+              "tid": 0,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 1,
+              "tid": 1,
+              "token": 1
+            }
+          ],
+          "gone": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 2,
+              "tid": 2,
+              "token": 2
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 3,
+              "tid": 3,
+              "token": 3
+            }
+          ]
+        },
+        "trace": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 0,
+            "side": "device",
+            "tid": 0,
+            "value": 10
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 0,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 1,
+            "side": "device",
+            "tid": 1,
+            "value": 100
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 1,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 0,
+            "side": "device",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 0
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 0,
+            "token": 0,
+            "value": 10
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 1,
+            "side": "device",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 1,
+            "token": 1,
+            "value": 100
+          },
+          {
+            "at": 0,
+            "errors": [],
+            "kind": "sealed",
+            "round": "base",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 2,
+            "side": "device",
+            "tid": 2,
+            "value": 20
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 2,
+            "token": 2
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 3,
+            "side": "device",
+            "tid": 3,
+            "value": 200
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 3,
+            "token": 3
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "timeout",
+            "side": "client",
+            "tid": 2,
+            "token": 2
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "timeout",
+            "side": "client",
+            "tid": 3,
+            "token": 3
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 3,
+            "side": "device",
+            "tid": 3
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 3
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "unclaimed",
+            "side": "client",
+            "tid": 3
+          },
+          {
+            "at": 6,
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              },
+              {
+                "address": 1,
+                "error": "TimeoutError"
+              }
+            ],
+            "kind": "sealed",
+            "round": "gone",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 0
+              },
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 10,
+              "1": 100
+            }
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 2,
+            "side": "device",
+            "tid": 2
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 2
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "unclaimed",
+            "side": "client",
+            "tid": 2
+          }
+        ]
+      },
+      "differences": {
+        "base": false,
+        "gone": true
+      },
+      "expected": [
+        {
+          "origins": {
+            "0": 0,
+            "1": 1
+          },
+          "round": "base",
+          "status": "success",
+          "values": {
+            "0": 10,
+            "1": 100
+          }
+        },
+        {
+          "origins": {},
+          "round": "gone",
+          "status": "failed",
+          "values": {}
+        }
+      ],
+      "name": "total_failure_cache"
+    },
+    {
+      "actual": {
+        "device": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 0,
+            "tid": 7,
+            "value": 5
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 1,
+            "tid": 8,
+            "value": 50
+          },
+          {
+            "address": 0,
+            "at": 2,
+            "connection": 0,
+            "released": true,
+            "seq": 2,
+            "tid": 9,
+            "value": 6
+          },
+          {
+            "address": 1,
+            "at": 2,
+            "connection": 0,
+            "released": true,
+            "seq": 3,
+            "tid": 10,
+            "value": 60
+          }
+        ],
+        "name": "other_valid_read",
+        "publications": [
+          {
+            "errors": [],
+            "round": "b",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 6,
+              "1": 60
+            }
+          }
+        ],
+        "rounds": [
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              }
+            ],
+            "round": "a",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 50
+            }
+          },
+          {
+            "errors": [],
+            "round": "b",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 6,
+              "1": 60
+            }
+          }
+        ],
+        "submitted": {
+          "a": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 0,
+              "tid": 7,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 1,
+              "tid": 8,
+              "token": 1
+            }
+          ],
+          "b": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 2,
+              "tid": 9,
+              "token": 2
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 3,
+              "tid": 10,
+              "token": 3
+            }
+          ]
+        },
+        "trace": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 0,
+            "side": "device",
+            "tid": 7,
+            "value": 5
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 7,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 1,
+            "side": "device",
+            "tid": 8,
+            "value": 50
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 8,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 1,
+            "side": "device",
+            "tid": 8
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 8
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 8,
+            "token": 1,
+            "value": 50
+          },
+          {
+            "address": 0,
+            "at": 2,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 2,
+            "side": "device",
+            "tid": 9,
+            "value": 6
+          },
+          {
+            "address": 0,
+            "at": 2,
+            "connection": 0,
+            "deadline": 7,
+            "kind": "sent",
+            "side": "client",
+            "tid": 9,
+            "token": 2
+          },
+          {
+            "address": 1,
+            "at": 2,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 3,
+            "side": "device",
+            "tid": 10,
+            "value": 60
+          },
+          {
+            "address": 1,
+            "at": 2,
+            "connection": 0,
+            "deadline": 7,
+            "kind": "sent",
+            "side": "client",
+            "tid": 10,
+            "token": 3
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "timeout",
+            "side": "client",
+            "tid": 7,
+            "token": 0
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 0,
+            "side": "device",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "unclaimed",
+            "side": "client",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              }
+            ],
+            "kind": "sealed",
+            "round": "a",
+            "side": "sampler",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 50
+            }
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 3,
+            "side": "device",
+            "tid": 10
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 10
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 10,
+            "token": 3,
+            "value": 60
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 2,
+            "side": "device",
+            "tid": 9
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 9
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 9,
+            "token": 2,
+            "value": 6
+          },
+          {
+            "at": 6,
+            "errors": [],
+            "kind": "sealed",
+            "round": "b",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 6,
+              "1": 60
+            }
+          }
+        ]
+      },
+      "differences": {
+        "a": false,
+        "b": false
+      },
+      "expected": [
+        {
+          "origins": {
+            "1": 1
+          },
+          "round": "a",
+          "status": "failed",
+          "values": {
+            "1": 50
+          }
+        },
+        {
+          "origins": {
+            "0": 2,
+            "1": 3
+          },
+          "round": "b",
+          "status": "success",
+          "values": {
+            "0": 6,
+            "1": 60
+          }
+        }
+      ],
+      "name": "other_valid_read"
+    },
+    {
+      "actual": {
+        "device": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 0,
+            "tid": 7,
+            "value": 11
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 1,
+            "tid": 8,
+            "value": 110
+          },
+          {
+            "address": 0,
+            "at": 51,
+            "connection": 0,
+            "released": true,
+            "seq": 2,
+            "tid": 7,
+            "value": 22
+          },
+          {
+            "address": 1,
+            "at": 51,
+            "connection": 0,
+            "released": true,
+            "seq": 3,
+            "tid": 8,
+            "value": 220
+          }
+        ],
+        "name": "paused_arrival",
+        "publications": [
+          {
+            "errors": [],
+            "round": "new",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 11,
+              "1": 220
+            }
+          }
+        ],
+        "rounds": [
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              }
+            ],
+            "round": "old",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 110
+            }
+          },
+          {
+            "errors": [],
+            "round": "new",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 11,
+              "1": 220
+            }
+          }
+        ],
+        "submitted": {
+          "new": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 2,
+              "tid": 7,
+              "token": 2
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 3,
+              "tid": 8,
+              "token": 3
+            }
+          ],
+          "old": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 0,
+              "tid": 7,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 1,
+              "tid": 8,
+              "token": 1
+            }
+          ]
+        },
+        "trace": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 0,
+            "side": "device",
+            "tid": 7,
+            "value": 11
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 7,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 1,
+            "side": "device",
+            "tid": 8,
+            "value": 110
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 8,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 1,
+            "side": "device",
+            "tid": 8
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 8
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 8,
+            "token": 1,
+            "value": 110
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "timeout",
+            "side": "client",
+            "tid": 7,
+            "token": 0
+          },
+          {
+            "at": 6,
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              }
+            ],
+            "kind": "sealed",
+            "round": "old",
+            "side": "sampler",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 110
+            }
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 0,
+            "side": "device",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 7
+          },
+          {
+            "address": 0,
+            "at": 51,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 2,
+            "side": "device",
+            "tid": 7,
+            "value": 22
+          },
+          {
+            "address": 0,
+            "at": 51,
+            "connection": 0,
+            "deadline": 56,
+            "kind": "sent",
+            "side": "client",
+            "tid": 7,
+            "token": 2
+          },
+          {
+            "address": 1,
+            "at": 51,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 3,
+            "side": "device",
+            "tid": 8,
+            "value": 220
+          },
+          {
+            "address": 1,
+            "at": 51,
+            "connection": 0,
+            "deadline": 56,
+            "kind": "sent",
+            "side": "client",
+            "tid": 8,
+            "token": 3
+          },
+          {
+            "at": 51,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 7,
+            "token": 2,
+            "value": 11
+          },
+          {
+            "at": 51,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 3,
+            "side": "device",
+            "tid": 8
+          },
+          {
+            "at": 51,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 8
+          },
+          {
+            "at": 51,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 8,
+            "token": 3,
+            "value": 220
+          },
+          {
+            "at": 51,
+            "errors": [],
+            "kind": "sealed",
+            "round": "new",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 0,
+                "token": 2
+              },
+              "1": {
+                "connection": 0,
+                "token": 3
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 11,
+              "1": 220
+            }
+          },
+          {
+            "at": 51,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 2,
+            "side": "device",
+            "tid": 7
+          },
+          {
+            "at": 51,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 7
+          },
+          {
+            "at": 51,
+            "connection": 0,
+            "kind": "unclaimed",
+            "side": "client",
+            "tid": 7
+          }
+        ]
+      },
+      "differences": {
+        "new": true,
+        "old": false
+      },
+      "expected": [
+        {
+          "origins": {
+            "1": 1
+          },
+          "round": "old",
+          "status": "failed",
+          "values": {
+            "1": 110
+          }
+        },
+        {
+          "origins": {
+            "0": 2,
+            "1": 3
+          },
+          "round": "new",
+          "status": "success",
+          "values": {
+            "0": 22,
+            "1": 220
+          }
+        }
+      ],
+      "name": "paused_arrival"
+    },
+    {
+      "actual": {
+        "device": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 0,
+            "tid": 7,
+            "value": 11
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "released": true,
+            "seq": 1,
+            "tid": 8,
+            "value": 110
+          },
+          {
+            "address": 0,
+            "at": 6,
+            "connection": 1,
+            "released": true,
+            "seq": 2,
+            "tid": 7,
+            "value": 22
+          },
+          {
+            "address": 1,
+            "at": 6,
+            "connection": 1,
+            "released": true,
+            "seq": 3,
+            "tid": 8,
+            "value": 220
+          }
+        ],
+        "name": "new_connection_isolation",
+        "publications": [
+          {
+            "errors": [],
+            "round": "new",
+            "sources": {
+              "0": {
+                "connection": 1,
+                "token": 0
+              },
+              "1": {
+                "connection": 1,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 22,
+              "1": 220
+            }
+          }
+        ],
+        "rounds": [
+          {
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              }
+            ],
+            "round": "old",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 110
+            }
+          },
+          {
+            "errors": [],
+            "round": "new",
+            "sources": {
+              "0": {
+                "connection": 1,
+                "token": 0
+              },
+              "1": {
+                "connection": 1,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 22,
+              "1": 220
+            }
+          }
+        ],
+        "submitted": {
+          "new": [
+            {
+              "address": 0,
+              "connection": 1,
+              "seq": 2,
+              "tid": 7,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 1,
+              "seq": 3,
+              "tid": 8,
+              "token": 1
+            }
+          ],
+          "old": [
+            {
+              "address": 0,
+              "connection": 0,
+              "seq": 0,
+              "tid": 7,
+              "token": 0
+            },
+            {
+              "address": 1,
+              "connection": 0,
+              "seq": 1,
+              "tid": 8,
+              "token": 1
+            }
+          ]
+        },
+        "trace": [
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 0,
+            "side": "device",
+            "tid": 7,
+            "value": 11
+          },
+          {
+            "address": 0,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 7,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "kind": "processed",
+            "released": false,
+            "seq": 1,
+            "side": "device",
+            "tid": 8,
+            "value": 110
+          },
+          {
+            "address": 1,
+            "at": 0,
+            "connection": 0,
+            "deadline": 5,
+            "kind": "sent",
+            "side": "client",
+            "tid": 8,
+            "token": 1
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 1,
+            "side": "device",
+            "tid": 8
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 8
+          },
+          {
+            "at": 0,
+            "connection": 0,
+            "kind": "answer",
+            "side": "client",
+            "tid": 8,
+            "token": 1,
+            "value": 110
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "kind": "timeout",
+            "side": "client",
+            "tid": 7,
+            "token": 0
+          },
+          {
+            "at": 6,
+            "errors": [
+              {
+                "address": 0,
+                "error": "TimeoutError"
+              }
+            ],
+            "kind": "sealed",
+            "round": "old",
+            "side": "sampler",
+            "sources": {
+              "1": {
+                "connection": 0,
+                "token": 1
+              }
+            },
+            "status": "failed",
+            "values": {
+              "1": 110
+            }
+          },
+          {
+            "address": 0,
+            "at": 6,
+            "connection": 1,
+            "kind": "processed",
+            "released": false,
+            "seq": 2,
+            "side": "device",
+            "tid": 7,
+            "value": 22
+          },
+          {
+            "address": 0,
+            "at": 6,
+            "connection": 1,
+            "deadline": 11,
+            "kind": "sent",
+            "side": "client",
+            "tid": 7,
+            "token": 0
+          },
+          {
+            "address": 1,
+            "at": 6,
+            "connection": 1,
+            "kind": "processed",
+            "released": false,
+            "seq": 3,
+            "side": "device",
+            "tid": 8,
+            "value": 220
+          },
+          {
+            "address": 1,
+            "at": 6,
+            "connection": 1,
+            "deadline": 11,
+            "kind": "sent",
+            "side": "client",
+            "tid": 8,
+            "token": 1
+          },
+          {
+            "at": 6,
+            "connection": 0,
+            "delivered": false,
+            "error": null,
+            "kind": "released",
+            "seq": 0,
+            "side": "device",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 1,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 3,
+            "side": "device",
+            "tid": 8
+          },
+          {
+            "at": 6,
+            "connection": 1,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 8
+          },
+          {
+            "at": 6,
+            "connection": 1,
+            "kind": "answer",
+            "side": "client",
+            "tid": 8,
+            "token": 1,
+            "value": 220
+          },
+          {
+            "at": 6,
+            "connection": 1,
+            "delivered": true,
+            "error": null,
+            "kind": "released",
+            "seq": 2,
+            "side": "device",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 1,
+            "kind": "wire_seen",
+            "side": "client",
+            "tid": 7
+          },
+          {
+            "at": 6,
+            "connection": 1,
+            "kind": "answer",
+            "side": "client",
+            "tid": 7,
+            "token": 0,
+            "value": 22
+          },
+          {
+            "at": 6,
+            "errors": [],
+            "kind": "sealed",
+            "round": "new",
+            "side": "sampler",
+            "sources": {
+              "0": {
+                "connection": 1,
+                "token": 0
+              },
+              "1": {
+                "connection": 1,
+                "token": 1
+              }
+            },
+            "status": "success",
+            "values": {
+              "0": 22,
+              "1": 220
+            }
+          }
+        ]
+      },
+      "differences": {
+        "new": false,
+        "old": false
+      },
+      "expected": [
+        {
+          "origins": {
+            "1": 1
+          },
+          "round": "old",
+          "status": "failed",
+          "values": {
+            "1": 110
+          }
+        },
+        {
+          "origins": {
+            "0": 2,
+            "1": 3
+          },
+          "round": "new",
+          "status": "success",
+          "values": {
+            "0": 22,
+            "1": 220
+          }
+        }
+      ],
+      "name": "new_connection_isolation"
+    }
+  ],
+  "report": {
+    "key_findings": [
+      "late_reuse: an expired 16-bit transaction id is reused while the old response is still arriving; the old value is delivered to the new attempt (round `new` address 0 reports 11, real origin seq 0).",
+      "paused_arrival: the old frame arrived before the 50-tick bound but was only dispatched after reuse; dispatch timing does not create identity (round `new` address 0 reports 11, real origin seq 0).",
+      "partial_failure_cache / total_failure_cache: Sampler seeds each round from last-known cache, so missing or failed slots become `success` with values from earlier rounds and stale origins.",
+      "cold_failure: on the first round the cache is empty, so the same seeding bug is masked and the round correctly seals `failed`; the cache is the necessary condition, not the failure itself.",
+      "late_no_reuse: identical gate and expiry but no id collision, so the round succeeds correctly; it isolates transaction-id reuse as the cause of the misattribution.",
+      "retire_pending_round: retiring a connection fails the pending round and the next round on the new connection is correct; this is the transport behaviour the retirement proposal must preserve.",
+      "retire_after_success: when a prior success populated the cache, the same retirement failure is sealed `success` with the old values; transport-side failure does not reach the publication judgement while cache seeding exists.",
+      "normal_out_of_order, other_valid_read and new_connection_isolation: this run's attribution is correct when transaction ids do not collide and after a new connection; these show the baseline and the masking condition, not a fix."
+    ],
+    "summary": "Replays the production entry points; `expected` is independent. differences[round]=true means the implementation's status, values or real device origin diverges from the contract."
+  }
+}

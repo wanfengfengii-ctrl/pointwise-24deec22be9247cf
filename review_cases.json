@@ -1,0 +1,181 @@
+[
+  {
+    "name": "normal_out_of_order",
+    "actions": [
+      {"op": "values", "values": [7, 70]},
+      {"op": "start", "round": "a", "cursor": 65534},
+      {"op": "values", "values": [8, 80]},
+      {"op": "start", "round": "b"},
+      {"op": "reply", "round": "b", "address": 1},
+      {"op": "reply", "round": "a", "address": 1},
+      {"op": "reply", "round": "b", "address": 0},
+      {"op": "reply", "round": "a", "address": 0},
+      {"op": "wait", "round": "a"},
+      {"op": "wait", "round": "b"}
+    ]
+  },
+  {
+    "name": "late_reuse",
+    "actions": [
+      {"op": "values", "values": [11, 110]},
+      {"op": "start", "round": "old", "cursor": 7},
+      {"op": "reply", "round": "old", "address": 1},
+      {"op": "tick", "at": 6},
+      {"op": "expire"},
+      {"op": "wait", "round": "old"},
+      {"op": "values", "values": [22, 220]},
+      {"op": "start", "round": "new", "cursor": 7},
+      {"op": "reply", "round": "old", "address": 0},
+      {"op": "reply", "round": "new", "address": 1},
+      {"op": "reply", "round": "new", "address": 0},
+      {"op": "wait", "round": "new"}
+    ]
+  },
+  {
+    "name": "late_no_reuse",
+    "actions": [
+      {"op": "values", "values": [11, 110]},
+      {"op": "start", "round": "old", "cursor": 7},
+      {"op": "reply", "round": "old", "address": 1},
+      {"op": "tick", "at": 6},
+      {"op": "expire"},
+      {"op": "wait", "round": "old"},
+      {"op": "values", "values": [22, 220]},
+      {"op": "start", "round": "new", "cursor": 9},
+      {"op": "reply", "round": "old", "address": 0},
+      {"op": "reply", "round": "new", "address": 1},
+      {"op": "reply", "round": "new", "address": 0},
+      {"op": "wait", "round": "new"}
+    ]
+  },
+  {
+    "name": "retire_pending_round",
+    "actions": [
+      {"op": "values", "values": [10, 100]},
+      {"op": "start", "round": "cut"},
+      {"op": "reconnect"},
+      {"op": "wait", "round": "cut"},
+      {"op": "values", "values": [20, 200]},
+      {"op": "start", "round": "fresh"},
+      {"op": "reply", "round": "fresh", "address": 1},
+      {"op": "reply", "round": "fresh", "address": 0},
+      {"op": "wait", "round": "fresh"}
+    ]
+  },
+  {
+    "name": "retire_after_success",
+    "actions": [
+      {"op": "values", "values": [10, 100]},
+      {"op": "start", "round": "base"},
+      {"op": "reply", "round": "base", "address": 0},
+      {"op": "reply", "round": "base", "address": 1},
+      {"op": "wait", "round": "base"},
+      {"op": "values", "values": [20, 200]},
+      {"op": "start", "round": "cut"},
+      {"op": "reconnect"},
+      {"op": "wait", "round": "cut"},
+      {"op": "start", "round": "fresh"},
+      {"op": "reply", "round": "fresh", "address": 1},
+      {"op": "reply", "round": "fresh", "address": 0},
+      {"op": "wait", "round": "fresh"}
+    ]
+  },
+  {
+    "name": "cold_failure",
+    "actions": [
+      {"op": "values", "values": [3, 30]},
+      {"op": "start", "round": "cold"},
+      {"op": "reply", "round": "cold", "address": 0, "error": 2},
+      {"op": "reply", "round": "cold", "address": 1},
+      {"op": "wait", "round": "cold"}
+    ]
+  },
+  {
+    "name": "partial_failure_cache",
+    "actions": [
+      {"op": "values", "values": [10, 100]},
+      {"op": "start", "round": "base"},
+      {"op": "reply", "round": "base", "address": 0},
+      {"op": "reply", "round": "base", "address": 1},
+      {"op": "wait", "round": "base"},
+      {"op": "values", "values": [20, 200]},
+      {"op": "start", "round": "loss"},
+      {"op": "reply", "round": "loss", "address": 0, "error": 2},
+      {"op": "reply", "round": "loss", "address": 1},
+      {"op": "wait", "round": "loss"}
+    ]
+  },
+  {
+    "name": "total_failure_cache",
+    "actions": [
+      {"op": "values", "values": [10, 100]},
+      {"op": "start", "round": "base"},
+      {"op": "reply", "round": "base", "address": 0},
+      {"op": "reply", "round": "base", "address": 1},
+      {"op": "wait", "round": "base"},
+      {"op": "values", "values": [20, 200]},
+      {"op": "start", "round": "gone"},
+      {"op": "tick", "at": 6},
+      {"op": "expire"},
+      {"op": "reply", "round": "gone", "address": 1},
+      {"op": "reply", "round": "gone", "address": 0},
+      {"op": "wait", "round": "gone"}
+    ]
+  },
+  {
+    "name": "other_valid_read",
+    "actions": [
+      {"op": "values", "values": [5, 50]},
+      {"op": "start", "round": "a", "cursor": 7},
+      {"op": "reply", "round": "a", "address": 1},
+      {"op": "tick", "at": 2},
+      {"op": "values", "values": [6, 60]},
+      {"op": "start", "round": "b", "cursor": 9},
+      {"op": "tick", "at": 6},
+      {"op": "expire"},
+      {"op": "reply", "round": "a", "address": 0},
+      {"op": "reply", "round": "b", "address": 1},
+      {"op": "reply", "round": "b", "address": 0},
+      {"op": "wait", "round": "a"},
+      {"op": "wait", "round": "b"}
+    ]
+  },
+  {
+    "name": "paused_arrival",
+    "actions": [
+      {"op": "values", "values": [11, 110]},
+      {"op": "start", "round": "old", "cursor": 7},
+      {"op": "reply", "round": "old", "address": 1},
+      {"op": "tick", "at": 6},
+      {"op": "expire"},
+      {"op": "wait", "round": "old"},
+      {"op": "values", "values": [22, 220]},
+      {"op": "pause"},
+      {"op": "reply", "round": "old", "address": 0},
+      {"op": "tick", "at": 51},
+      {"op": "start", "round": "new", "cursor": 7},
+      {"op": "resume", "drain": 1},
+      {"op": "reply", "round": "new", "address": 1},
+      {"op": "reply", "round": "new", "address": 0},
+      {"op": "wait", "round": "new"}
+    ]
+  },
+  {
+    "name": "new_connection_isolation",
+    "actions": [
+      {"op": "values", "values": [11, 110]},
+      {"op": "start", "round": "old", "cursor": 7},
+      {"op": "reply", "round": "old", "address": 1},
+      {"op": "tick", "at": 6},
+      {"op": "expire"},
+      {"op": "wait", "round": "old"},
+      {"op": "values", "values": [22, 220]},
+      {"op": "reconnect"},
+      {"op": "start", "round": "new", "cursor": 7},
+      {"op": "reply", "round": "old", "address": 0},
+      {"op": "reply", "round": "new", "address": 1},
+      {"op": "reply", "round": "new", "address": 0},
+      {"op": "wait", "round": "new"}
+    ]
+  }
+]

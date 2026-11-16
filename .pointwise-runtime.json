@@ -5,14 +5,12 @@
   "verify": [
     "python3",
     "-B",
-    "checks.py",
-    "normal"
+    "evidence_gate.py"
   ],
   "demo": [
     "python3",
     "-B",
-    "lab.py",
-    "samples/polls.json",
-    "incident"
+    "review_evidence.py",
+    "demo"
   ]
 }

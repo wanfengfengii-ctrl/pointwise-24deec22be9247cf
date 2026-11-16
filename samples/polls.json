@@ -1,0 +1,122 @@
+[
+  {
+    "name": "normal",
+    "actions": [
+      {
+        "op": "values",
+        "values": [
+          10,
+          100
+        ]
+      },
+      {
+        "op": "start",
+        "round": "a",
+        "cursor": 65535
+      },
+      {
+        "op": "values",
+        "values": [
+          20,
+          200
+        ]
+      },
+      {
+        "op": "start",
+        "round": "b"
+      },
+      {
+        "op": "reply",
+        "round": "b",
+        "address": 1
+      },
+      {
+        "op": "reply",
+        "round": "a",
+        "address": 0
+      },
+      {
+        "op": "reply",
+        "round": "b",
+        "address": 0
+      },
+      {
+        "op": "reply",
+        "round": "a",
+        "address": 1
+      },
+      {
+        "op": "wait",
+        "round": "a"
+      },
+      {
+        "op": "wait",
+        "round": "b"
+      }
+    ]
+  },
+  {
+    "name": "incident",
+    "actions": [
+      {
+        "op": "values",
+        "values": [
+          11,
+          110
+        ]
+      },
+      {
+        "op": "start",
+        "round": "old",
+        "cursor": 7
+      },
+      {
+        "op": "reply",
+        "round": "old",
+        "address": 1
+      },
+      {
+        "op": "tick",
+        "at": 6
+      },
+      {
+        "op": "expire"
+      },
+      {
+        "op": "wait",
+        "round": "old"
+      },
+      {
+        "op": "values",
+        "values": [
+          22,
+          220
+        ]
+      },
+      {
+        "op": "start",
+        "round": "new",
+        "cursor": 7
+      },
+      {
+        "op": "reply",
+        "round": "old",
+        "address": 0
+      },
+      {
+        "op": "reply",
+        "round": "new",
+        "address": 1
+      },
+      {
+        "op": "reply",
+        "round": "new",
+        "address": 0
+      },
+      {
+        "op": "wait",
+        "round": "new"
+      }
+    ]
+  }
+]

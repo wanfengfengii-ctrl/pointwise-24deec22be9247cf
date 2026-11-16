@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "kind": "cli",
+  "setup": [],
+  "verify": [
+    "python3",
+    "-B",
+    "checks.py",
+    "normal"
+  ],
+  "demo": [
+    "python3",
+    "-B",
+    "lab.py",
+    "samples/polls.json",
+    "incident"
+  ]
+}
